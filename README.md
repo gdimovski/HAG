@@ -1,4 +1,4 @@
-# MVC-Core-Application-Project
+# MVC Project
 Username(Role user): user@user.com
 Password: User1!
 
