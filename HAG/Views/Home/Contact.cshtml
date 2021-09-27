@@ -1,0 +1,310 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="company.css" type="text/css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    #templatemo_header_wrapper {
+        height: 90px;
+    }
+    /* Style inputs */
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    button[type=button] {
+        background-color: #bbd142;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+        button[type=button]:hover {
+            background-color: #bbd142;
+        }
+
+    /* Style the container/contact section */
+    .container {
+        //border-radius: 5px;
+        background-color: #f2f2f2;
+        //padding: 10px;
+    }
+
+    /* Create two columns that float next to eachother */
+    .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    #partial {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #1d2120;
+    }
+
+        #partial li {
+            float: left;
+        }
+
+            #partial li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+                #partial li a:hover {
+                    background-color: #111111;
+                }
+</style>
+<body>
+    </div>
+    <!-- Top Menu Start -->
+    <div id="templatemo_header_wrapper">
+        <div id="templatemo_header">
+            <div id="site_logo">
+
+            </div>
+
+            <div id="templatemo_menu">
+                <div id="templatemo_menu_left"></div>
+                <ul>
+                    <li><a href="/Home/Home" class="current">Home</a></li>
+                    <li><a href="/Products/Index">Products</a></li>
+                    <li><a href="/Home/Gallery">Gallery</a></li>
+                    <li><a href="/Home/Company">Company</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                    <li class="last cart-image"><a href="@Url.Action("Index","AddToCart")"><img src="~/Content/Images/cart-lime.png" alt="" /><span style="color:red">@Session["count"]</span></a></li>
+                </ul>
+
+            </div>
+            <ul id="partial">
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div>
+
+    </div>
+
+    </div>
+    <!-- End of Top Menu-->
+
+
+
+    <div id="templatemo_content_wrapper">
+        <div id="templatemo_content">
+
+            <!-- Content Area -->
+            <div id="column_w530">
+                <div class="header_02">Contact</div>
+
+                <div class="container">
+                    <div style="text-align:center">
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <img src="~/Content/Images/skopje.png" style="width:100%; border: solid 1px black;" />
+                            <br /><br />
+                            <p>Company name: HAG clothing</p>
+                            <p>Owners: </p>
+                            <ul>
+                                <li>Hristijan Mirchevski</li>
+                                <li>Andrej Petrushev</li>
+                                <li>Gorazd Dimovski</li>
+                            </ul>
+                            <p>Location:Skopje, Macedonia</p>
+                            <p>Contact number: +389 02 3444 345</p>
+                        </div>
+                        <div class="column">
+                            <form action="/action_page.php">
+                                <label for="fname">First Name</label>
+                                <input type="text" id="fname" name="firstname" placeholder="Your name.." />
+                                <label for="lname">Last Name</label>
+                                <input type="text" id="lname" name="lastname" placeholder="Your last name.." />
+                                <label for="subject">Subject</label>
+                                <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+                                <a href="/Home/SendInfo"><button type="button" class="btn btn-warning">Submit</button></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="cleaner"></div>
+            </div>
+            <!-- End of Content Area -->
+            <!-- Right Sidebar -->
+            <div id="column_w300">
+
+                <div class="header_03">Latest News</div>
+
+                <div class="column_w300_section_01">
+                    <div class="news_image_wrapper">
+                        <img src="~/Content/Images/cotton.jpg" alt="image" />
+                    </div>
+
+                    <div class="news_content">
+                        <div class="news_date">OCT 29, 2048</div>
+                        <div class="header_04"><a href="#">Organic materials</a></div>
+                        <p>We use only organic materials for our products.</p>
+                    </div>
+
+                    <div class="cleaner"></div>
+                </div>
+
+                <div class="column_w300_section_01 even_color">
+                    <div class="news_image_wrapper">
+                        <img src="~/Content/Images/team.jpg" alt="image" />
+                    </div>
+
+                    <div class="news_content">
+                        <div class="news_date">OCT 28, 2048</div>
+                        <div class="header_04"><a href="#">Our factories</a></div>
+                        <p> Feel the atmosphere inside our factories.</p>
+                    </div>
+
+                    <div class="cleaner"></div>
+                </div>
+
+                <div class="column_w300_section_01">
+                    <div class="news_image_wrapper">
+                        <img src="~/Content/Images/zara.png" alt="image" />
+                    </div>
+
+                    <div class="news_content">
+                        <div class="news_date">OCT 27, 2048</div>
+                        <div class="header_04"><a href="#">Our Partners</a></div>
+                        <p> We started our partnership with one of the biggest clothing brands, Zara.</p>
+                    </div>
+
+                    <div class="cleaner"></div>
+                </div>
+
+                <div class="cleaner"></div>
+            </div>
+            <!-- End of Right Sidebar -->
+
+            <div class="cleaner"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="templatemo_footer_wrapper">
+
+        <div id="templatemo_footer">
+
+            <div class="section_w180">
+                <div class="header_05">Services</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Cum sociis</a></li>
+                        <li><a href="#">Donec quam</a></li>
+                        <li><a href="#">Nulla consequat</a></li>
+                        <li><a href="#">In enim justo</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">About</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Nullam quis</a></li>
+                        <li><a href="#">Sed consequat</a></li>
+                        <li><a href="#">Cras dapibus</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Cum sociis</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">Cool links</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Aenean vulputate</a></li>
+                        <li><a href="#">Etiam ultricies</a></li>
+                        <li><a href="#">Nullam quis</a></li>
+                        <li><a href="#">Sed consequat</a></li>
+                        <li><a href="#">Cras dapibus</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">Contact</div>
+
+                <div class="section_w180_content">
+
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Donec quam</a></li>
+                        <li><a href="#">Nulla consequat</a></li>
+                        <li><a href="#">In enim justo</a></li>
+                        <li><a href="#">Aenean vulputate</a></li>
+                        <li><a href="#">Etiam ultricies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">Partners</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="http://www.templatemo.com" target="_parent">CSS Templates</a></li>
+                        <li><a href="http://www.flashmo.com" target="_parent">Flash Websites</a></li>
+                        <li><a href="http://www.templatemo.com/page/2" target="_parent">Website Templates</a></li>
+                        <li><a href="http://www.webdesignmo.com" target="_parent">Web Design Tips</a></li>
+                        <li><a href="http://www.photovaco.com" target="_blank">Free Stock Photos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="margin_bottom_20"></div>
+            Copyright © 2048 <a href="#">Your Company Name</a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+            <div class="cleaner"></div>
+        </div>
+
+    </div>
+    <!-- End of Footer -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+

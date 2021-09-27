@@ -1,0 +1,332 @@
+﻿@model HAG.Models.Product
+
+@{
+    ViewBag.Title = "Edit";
+}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+    #templatemo_header_wrapper {
+        height: 90px;
+    }
+    .input-container {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .icon {
+        padding: 10px;
+        background: #bbd142;
+        color: white;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 10px;
+        outline: none;
+    }
+
+        .input-field:focus {
+            border: 2px solid #bbd142;
+        }
+
+    /* Set a style for the submit button */
+    .btn {
+        background-color: #bbd142;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        width: 20%;
+        opacity: 0.9;
+    }
+
+        .btn:hover {
+            opacity: 1;
+        }
+    #partial {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #1d2120;
+    }
+
+        #partial li {
+            float: left;
+        }
+
+            #partial li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+                #partial li a:hover {
+                    background-color: #111111;
+                }
+</style>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>@ViewBag.Title - edit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+</head>
+<body>
+
+    <!-- Top Menu Start -->
+    <div id="templatemo_header_wrapper">
+        <div id="templatemo_header">
+            <div id="site_logo">
+
+            </div>
+
+            <div id="templatemo_menu">
+                <div id="templatemo_menu_left"></div>
+                <ul>
+                    <li><a href="/Home/Home" class="current">Home</a></li>
+                    <li><a href="/Products/Index">Products</a></li>
+                    <li><a href="/Home/Gallery">Gallery</a></li>
+                    <li><a href="/Home/Company">Company</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                    <li class="last cart-image"><a href="@Url.Action("Index","AddToCart")"><img src="~/Content/Images/cart-lime.png" alt="" /><span style="color:red">@Session["count"]</span></a></li>
+                </ul>
+
+            </div>
+            <ul id="partial">
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div>
+
+    </div>
+
+
+    <!-- End of Top Menu-->
+
+
+
+    <div id="templatemo_content_wrapper">
+        <div id="templatemo_content">
+
+            <!-- Content Area -->
+            <div id="column_w530">
+                <div class="header_02">Edit product</div>
+
+
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.id)
+                        </div>
+                    <form action="/action_page.php" style="max-width:500px;margin:auto">
+                        <div class="form-group">
+                            <b><label>Name:</label></b>
+                        </div>
+
+                        <div class="col-md-10">
+                            <i class="fa fa-user icon"></i>
+                            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            <b><label>Price:</label></b>
+                        </div>
+
+                        <div class="col-md-10">
+                            <i class="fa fa-dollar icon"></i>
+                            @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class=" form-group">
+                            <b><label>Size:</label></b>
+                        </div>
+
+                        <div class="col-md-10">
+                            <i class="fa fa-list icon"></i>
+                            @Html.EditorFor(model => model.category, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.category, "", new { @class = "text-danger" })
+                        </div>
+                        <div class=" form-group">
+                            <b><label>Image:</label></b>
+                        </div>
+
+                        <div class="col-md-10">
+                            <i class="fa fa-image icon"></i>
+                            @Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+                        </div>
+                        <br />
+                        <button type="submit" value="save" class="btn">Save</button>
+                    </form>
+                }
+
+                <div>
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+
+                <div class="cleaner"></div>
+            </div>
+            <!-- End of Content Area -->
+            <!-- Right Sidebar -->
+            <div id="column_w300">
+
+                <div class="header_03">Latest News</div>
+
+                <div class="column_w300_section_01">
+                    <div class="news_image_wrapper">
+                        <img src="~/Content/Images/cotton.jpg" alt="image" />
+                    </div>
+
+                    <div class="news_content">
+                        <div class="news_date">OCT 29, 2048</div>
+                        <div class="header_04"><a href="#">Organic materials</a></div>
+                        <p>We use only organic materials for our products.</p>
+                    </div>
+
+                    <div class="cleaner"></div>
+                </div>
+
+                <div class="column_w300_section_01 even_color">
+                    <div class="news_image_wrapper">
+                        <img src="~/Content/Images/team.jpg" alt="image" />
+                    </div>
+
+                    <div class="news_content">
+                        <div class="news_date">OCT 28, 2048</div>
+                        <div class="header_04"><a href="#">Our factories</a></div>
+                        <p> Feel the atmosphere inside our factories.</p>
+                    </div>
+
+                    <div class="cleaner"></div>
+                </div>
+
+                <div class="column_w300_section_01">
+                    <div class="news_image_wrapper">
+                        <img src="~/Content/Images/zara.png" alt="image" />
+                    </div>
+
+                    <div class="news_content">
+                        <div class="news_date">OCT 27, 2048</div>
+                        <div class="header_04"><a href="#">Our Partners</a></div>
+                        <p> We started our partnership with one of the biggest clothing brands, Zara.</p>
+                    </div>
+
+                    <div class="cleaner"></div>
+                </div>
+
+                <div class="cleaner"></div>
+            </div>
+            <!-- End of Right Sidebar -->
+
+            <div class="cleaner"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="templatemo_footer_wrapper">
+
+        <div id="templatemo_footer">
+
+            <div class="section_w180">
+                <div class="header_05">Services</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Cum sociis</a></li>
+                        <li><a href="#">Donec quam</a></li>
+                        <li><a href="#">Nulla consequat</a></li>
+                        <li><a href="#">In enim justo</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">About</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Nullam quis</a></li>
+                        <li><a href="#">Sed consequat</a></li>
+                        <li><a href="#">Cras dapibus</a></li>
+                        <li><a href="#">Lorem ipsum dolor</a></li>
+                        <li><a href="#">Cum sociis</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">Cool links</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Aenean vulputate</a></li>
+                        <li><a href="#">Etiam ultricies</a></li>
+                        <li><a href="#">Nullam quis</a></li>
+                        <li><a href="#">Sed consequat</a></li>
+                        <li><a href="#">Cras dapibus</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">Contact</div>
+
+                <div class="section_w180_content">
+
+                    <ul class="footer_menu_list">
+                        <li><a href="#">Donec quam</a></li>
+                        <li><a href="#">Nulla consequat</a></li>
+                        <li><a href="#">In enim justo</a></li>
+                        <li><a href="#">Aenean vulputate</a></li>
+                        <li><a href="#">Etiam ultricies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section_w180">
+                <div class="header_05">Partners</div>
+                <div class="section_w180_content">
+                    <ul class="footer_menu_list">
+                        <li><a href="http://www.templatemo.com" target="_parent">CSS Templates</a></li>
+                        <li><a href="http://www.flashmo.com" target="_parent">Flash Websites</a></li>
+                        <li><a href="http://www.templatemo.com/page/2" target="_parent">Website Templates</a></li>
+                        <li><a href="http://www.webdesignmo.com" target="_parent">Web Design Tips</a></li>
+                        <li><a href="http://www.photovaco.com" target="_blank">Free Stock Photos</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="margin_bottom_20"></div>
+            Copyright © 2048 <a href="#">Your Company Name</a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+            <div class="cleaner"></div>
+        </div>
+
+    </div>
+    <!-- End of Footer -->
+
+</body>
+
+</html>
