@@ -1,5 +1,5 @@
 # C# MVC Project
-Group project with <a href="https://www.linkedin.com/in/hristijan-mirchevski-13b4351a7/">Hristijan Mircevski</a>
+Group project with <a href="https://www.linkedin.com/in/hristijan-mirchevski-13b4351a7/">Hristijan Mircevski</a> <br />
 Username(Role user): user@user.com
 Password: User1!
 
