@@ -9,7 +9,7 @@ Password: Admin1!
 
 <img src="https://user-images.githubusercontent.com/63555005/134907251-74835464-1e5d-43f5-a107-25102e4ac160.JPG"  height="250">
 
-<img src="https://user-images.githubusercontent.com/63555005/134907251-74835464-1e5d-43f5-a107-25102e4ac160.JPG"  height="250">
+<img src="https://github.com/gdimovski/OnlineStore_MVC_Project/issues/1#issue-1176949456"  height="250">
 
 <img src="https://user-images.githubusercontent.com/63555005/134907251-74835464-1e5d-43f5-a107-25102e4ac160.JPG"  height="250">
 
