@@ -11,7 +11,7 @@ Password: Admin1!
 
 <img src="https://user-images.githubusercontent.com/63555005/159518912-d12e74a8-c3e8-48d6-8401-bc1b0c92caee.png"  height="250">
 
-<img src="(https://user-images.githubusercontent.com/63555005/159518998-fbe83bd7-68d9-4e39-b614-d3a65577b5d1.png"  height="250">
+<img src="https://user-images.githubusercontent.com/63555005/159518998-fbe83bd7-68d9-4e39-b614-d3a65577b5d1.png"  height="250">
 
 
 
